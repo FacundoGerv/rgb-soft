@@ -1,0 +1,162 @@
+:root{
+    --main: rgb(34,34,34);
+    --primary: #FFC0CB;
+    --details: #a1a1a1;
+    --detailsDeop: rgba(161,161,161, 0.2)
+}
+
+/*###################*/
+/*   Hidden SideBar  */
+/*###################*/
+
+.sideBar{
+    position: relative;
+    border-right: solid 0.1px var(--primary);
+    height: 100vh;
+    width: 3vw;
+    float: left;
+    z-index: 99;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1vh 0.4vw 1vh 0.4vw;
+}
+.sideBar .sideItemContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: fill;
+    cursor:pointer;
+    width: calc(2vw + 10px);
+    height: calc(2vw + 10px);
+    background-color: var(--detailsDeop);
+    border-radius: 100%;
+    border: inset 0.1px var(--primary);
+    margin-top: 1vw;
+    padding: 0.1vh;
+}
+.sideBar .sideSelector{
+    height: 2vw;
+    width: 2vw;
+}
+.sideBar .sideItemContainer img{
+    width: 2vw;
+    height: 2vw;
+}
+.sideBar .sideItemContainer span{
+    text-align: center;
+    padding: 0.1vw;
+    font-size: calc(0.5vw + 3px);
+    color: var(--details);
+}
+.sideBar .sideItemContainer:first-child{
+    margin-bottom: 3vh;
+}
+.sideBar .sideItemContainer:last-child{
+    position: fixed;
+    bottom: 2vh;
+}
+
+/*###################*/
+/*Side Bar Dropdown??*/
+/*###################*/
+
+.sideBarExtend{
+    background-color: var(--main);
+    border-right: solid 0.1px var(--primary);
+    position: relative;
+    height: 100vh;
+    width: calc(10vw + 20px);
+    z-index: 99;
+    float: left;
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    padding: 1vh 0.4vw 1vh 0.4vw;
+}
+.sideBarExtend .sideItemContainer{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: calc(2vw + 10px);
+    margin-top: 1vw;
+    padding: 0.1vh;
+}
+.sideBarExtend .sideItemContainer:first-child{
+    margin-bottom: 3vh;
+}
+.sideBarExtend .sideItemContainer:last-child{
+    position: fixed;
+    bottom: 2vh;
+}
+.sideBarExtend .sideSelector{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: fill;
+    cursor:pointer;
+    width: calc(2vw + 10px);
+    height: calc(2vw + 10px);
+    background-color: var(--detailsDeop);
+    border-radius: 100%;
+    border: inset 0.1px var(--primary);;
+}
+.sideBarExtend .sideItemContainer img{
+    width: 2vw;
+    height: 2vw;
+}
+.sideBarExtend .sideItemContainer span{
+    padding: 0.5vw;
+    font-variant: small-caps;
+    white-space: nowrap;
+}
+.show{
+    display:flex;
+}
+.sideBarShowAnimation{
+    animation: slide-out 0.5s ease-in forwards;
+}
+  @keyframes slide-out{
+    0% {
+      width: 3vw;
+    }
+    100% {
+      width: calc(10vw + 20px);
+    }
+  }
+.sideTextShowAnimation{
+    animation: text-show 0.5s ease-in forwards;
+}
+@keyframes text-show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.sideBarHideAnimation{
+    animation: slide-in 0.5s ease-out forwards;
+}
+@keyframes slide-in {
+    0% {
+        width: calc(10vw + 20px);
+      }
+      100% {
+        width: 3vw;
+      }
+}
+.sideTextHideAnimation{
+    animation: text-hide 0.5s ease-out forwards;
+}
+@keyframes text-hide {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }  
+}

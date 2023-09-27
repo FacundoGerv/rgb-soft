@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  position: relative;
+  background: rgba(34, 34, 34, 1); /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, rgba(34, 34, 34, 1), rgba(255, 192, 203, 0.5));
+  background: linear-gradient(to right, rgba(34, 34, 34, 1), rgba(255, 192, 203, 0.1));
+}
+
+.App-content {
+  display: grid;
+  grid-gap: 1vw;
+  min-height: 100vh;
+  position: relative;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-content img{
+  margin: 1vh 1vw 1vh 1vw;
+  border: solid 1px red;
+  width: 20vw;
+  height: 20vh;
+}
