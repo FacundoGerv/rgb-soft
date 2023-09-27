@@ -5,7 +5,23 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-        <div>
+        <div className="wrapper">
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
+          <img src={logo} alt="test"/>
           <img src={logo} alt="test"/>
           <img src={logo} alt="test"/>
           <img src={logo} alt="test"/>
