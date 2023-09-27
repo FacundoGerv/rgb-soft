@@ -112,6 +112,7 @@
     padding: 0.5vw;
     font-variant: small-caps;
     white-space: nowrap;
+    color: var(--details)
 }
 .show{
     display:flex;
