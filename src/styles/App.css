@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+  position: relative;
+  background: rgba(34, 34, 34, 1); /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, rgba(34, 34, 34, 1), rgba(255, 192, 203, 0.5));
+  background: linear-gradient(to right, rgba(34, 34, 34, 1), rgba(255, 192, 203, 0.5));
+}
+
+.App-content {
+  scrollbar-gutter: stable;
+  overflow-y: auto;
+  padding: 2vh 2vw 2vh 2vw;
+  display: grid;
+  grid-gap: 1vw;
+  height: 100vh;
+  position: relative;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+::-webkit-scrollbar{
+  width: 27px;
+}
+::-webkit-scrollbar-thumb{
+  border: 8px solid transparent;
+  border-radius: 100px;
+  background-color: rgba(255, 192, 203, 0.2);
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(255, 192, 203, 0.7);
+}
+::-webkit-scrollbar-thumb:scroll{
+  background-color: rgba(255, 192, 203, 0.7);
+}
+::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 6px transparent;
+  margin-top: 0.3vh;
+  margin-bottom: 1vh;
+}
+.App::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+}
+.App::-webkit-scrollbar-track {
+  background: transparent;
+}
+  
+.App::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-right: none;
+  border-left: none;
+}
+
+.App::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 10px; 
+}
+
+.App::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 10px;
+}
