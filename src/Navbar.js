@@ -1,7 +1,14 @@
-import './Navbar.css';
-import mainLogo from './softLogo.png';
+import './styles/Navbar.css';
+import mainLogo from './images/softLogo.png';
 
-function Navbar() {
+function Navbar(props) {
+    const handleSetActive = (value) => {
+      if (typeof props.setActive === 'function') {
+        props.setActive(value);
+      } else {
+        console.error("props.setActive is not a function");
+      }
+    };
     return (
         <div>
             <div className="sideBar show">
@@ -46,33 +53,33 @@ function Navbar() {
                     <div className="sideSelector">
                     <img src={mainLogo} alt="Menu Button"/>
                     </div>
-                    <span className="sideText">RGBSoft</span>
+                    <span className="sideText" onClick={()=> handleSetActive("home")} >RGBSoft</span>
                 </div>
-                <div className="sideItemContainer">
+                <div className="sideItemContainer" onClick={()=> handleSetActive("iphone")}>
                     <div className="sideSelector">
                     <img src={mainLogo} alt="Menu Button"/>
                     </div>
                     <span className="sideText">iPhone</span>
                 </div>
-                <div className="sideItemContainer">
+                <div className="sideItemContainer" onClick={()=> handleSetActive("airpods")}>
                     <div className="sideSelector">
                     <img src={mainLogo} alt="Menu Button"/>
                     </div>
                     <span className="sideText">AirPods</span>
                 </div>
-                <div className="sideItemContainer">
+                <div className="sideItemContainer" onClick={()=> handleSetActive("applewatch")}>
                     <div className="sideSelector">
                     <img src={mainLogo} alt="Apple Watch"/>
                     </div>
                     <span className="sideText">Apple Watch</span>
                 </div>
-                <div className="sideItemContainer">
+                <div className="sideItemContainer" onClick={()=> handleSetActive("accesorios")}>
                     <div className="sideSelector">
                     <img src={mainLogo} alt="Menu Button"/>
                     </div>
                     <span className="sideText">Accesorios</span>
                 </div>
-                <div className="sideItemContainer">
+                <div className="sideItemContainer" onClick={()=> handleSetActive("cargadores")}>
                     <div className="sideSelector">
                     <img src={mainLogo} alt="Menu Button"/>
                     </div>
