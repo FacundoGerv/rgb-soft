@@ -19,16 +19,12 @@
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: fadeIn 1s ease-in-out;
-    font-variant: small-caps;
-    cursor:default;
-    user-select:none;
 }
 @keyframes fadeIn { /*Animacion del titulo*/
     0% {
         opacity: 0;
         transform: translateY(-10px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -64,14 +60,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    display:none;
+    display: none;
     justify-items: end;
     flex-direction: column;
     position: relative;
     border-radius: 1%;
     overflow: hidden;
     font-variant: small-caps;
-    /* box-shadow: inset 0.5px 0 2px 0.5px #000, inset -0.5px 0 2px -0.5px #000, 0.5px 0 2px 0.5px #FFC0CB, -0.5px 0 2px -0.5px #FFC0CB; */
     border: inset 1px var(--primary);
     box-shadow: 0 0 0 .5px var(--details);
     cursor: pointer;
@@ -107,7 +102,6 @@
     height:80%;
     z-index:999;
     position:fixed;
-    /* box-shadow: inset 0.5px 0 2px 0.5px #000, inset -0.5px 0 2px -0.5px #000, 0.5px 0 2px 0.5px #FFC0CB, -0.5px 0 2px -0.5px #FFC0CB; */
     border: inset 1px var(--primary);
     box-shadow: 0 0 1px .5px var(--details);
     animation: overlayOpacity 0.3s ease-in;
@@ -124,12 +118,11 @@
     margin-right: 30%;
     padding-bottom: 1%;
 }
-@keyframes overlayOpacity {
+@keyframes overlayOpacity { /*Animacion del Overlay*/
     0%{
         opacity: 0;
     }
     100%{
         opacity: 1;
     }
-    
 }
