@@ -1,7 +1,9 @@
 .App {
   text-align: center;
   position: relative;
-  background: rgba(34, 34, 34, 1);
+  background: rgba(34, 34, 34, 1); /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, rgba(34, 34, 34, 1), rgba(255, 192, 203, 0.5));
+  background: linear-gradient(to right, rgba(34, 34, 34, 1), rgba(255, 192, 203, 0.5)); */
 }
 
 .App-content {

@@ -6,7 +6,6 @@ const Iphone = () => {
 
   const divArray = Array.from({ length: 12 }, (_, index) => index + 1);
 
-
   const selection = (event) => {
     const selDiv = event.target;
     setSelectedDiv(selDiv);
@@ -18,6 +17,7 @@ const Iphone = () => {
   };
   const generateContent = () => {
     if (selectedDiv) {
+
       return (
         <div className="overlay" onClick={closeOverlay}>
           <h1>{selectedDiv.textContent}</h1>
@@ -32,7 +32,7 @@ const Iphone = () => {
     <div className="category-container">
       {divArray.map((divNumber, index) => (
         <div
-          className="card-container show-card"
+          className={`card-container show-card ${index === divArray.length - 1 ? 'last-card' : ''}`}
           key={divNumber}
           id="card-hover"
           onClick={selection}
@@ -43,7 +43,6 @@ const Iphone = () => {
       
     </div>
     {generateContent()}
-
     </div>
   );
 };
