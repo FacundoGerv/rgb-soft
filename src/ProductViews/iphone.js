@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './../styles/Products.css';
 
 const Iphone = () => {
-  const [selectedDiv, setSelectedDiv] = useState(null); // Estado para almacenar el div seleccionado
+  const [selectedDiv, setSelectedDiv] = useState(null); 
 
-  const divArray = Array.from({ length: 10 }, (_, index) => index + 1);
+  const divArray = Array.from({ length: 12 }, (_, index) => index + 1);
+
 
   const selection = (event) => {
     const selDiv = event.target;
@@ -17,7 +18,6 @@ const Iphone = () => {
   };
   const generateContent = () => {
     if (selectedDiv) {
-      // Aquí puedes generar contenido basado en el div seleccionado
       return (
         <div className="overlay" onClick={closeOverlay}>
           <h1>{selectedDiv.textContent}</h1>
@@ -28,13 +28,22 @@ const Iphone = () => {
   };
 
   return (
+    <div className="product-container">
     <div className="category-container">
-      {divArray.map((divNumber) => (
-        <div className="card-container show-card" key={divNumber} id="card-hover" onClick={selection}>
-          <span>Iphone {divNumber}</span>
+      {divArray.map((divNumber, index) => (
+        <div
+          className="card-container show-card"
+          key={divNumber}
+          id="card-hover"
+          onClick={selection}
+        >
+          <span>placeholder {divNumber}</span>
         </div>
       ))}
-      {generateContent()}
+      
+    </div>
+    {generateContent()}
+
     </div>
   );
 };
@@ -44,7 +53,6 @@ function showcard() {
     cards[i].classList.add("show-card");
   };
 };
-
 function hidecard() {
   var cards = document.getElementsByClassName("card-container");
   for (var i = 0; i < cards.length; i++) {
