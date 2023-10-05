@@ -63,7 +63,7 @@
 /*###################*/
 
 .sideBarExtend{
-    background-color: var(--main);
+    background-color: var(--detailsDeop);
     border-right: solid 0.1px var(--primary);
     position: relative;
     height: 100vh;
