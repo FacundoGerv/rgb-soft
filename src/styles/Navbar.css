@@ -87,6 +87,12 @@
 .sideBarExtend .sideItemContainer:first-child{
     margin-bottom: 3vh;
 }
+.sideBarExtend .sideItemContainer:first-child > span{
+    margin-left: 1vh;
+    font-weight: bold;
+    font-size: large;
+    color:var(--primary);
+}
 .sideBarExtend .sideItemContainer:last-child{
     position: fixed;
     bottom: 2vh;

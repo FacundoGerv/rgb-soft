@@ -19,25 +19,25 @@ function Navbar(props) {
                 </div>
                 <div className="sideItemContainer">
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={mainLogo} alt="Menu Button" onClick={()=> handleSetActive("iphone")}/>
+                    </div>
+                </div>
+                <div className="sideItemContainer" onClick={()=> handleSetActive("airpods")}>
+                    <div className="sideSelector">
+                    <img src={mainLogo} alt="Menu Button" />
                     </div>
                 </div>
                 <div className="sideItemContainer">
+                    <div className="sideSelector" onClick={()=> handleSetActive("applewatch")}>
+                    <img src={mainLogo} alt="Menu Button"/>
+                    </div>
+                </div>
+                <div className="sideItemContainer" onClick={()=> handleSetActive("accesorios")}>
                     <div className="sideSelector">
                     <img src={mainLogo} alt="Menu Button"/>
                     </div>
                 </div>
-                <div className="sideItemContainer">
-                    <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
-                    </div>
-                </div>
-                <div className="sideItemContainer">
-                    <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
-                    </div>
-                </div>
-                <div className="sideItemContainer">
+                <div className="sideItemContainer" onClick={()=> handleSetActive("cargadores")}>
                     <div className="sideSelector">
                     <img src={mainLogo} alt="Menu Button"/>
                     </div>
