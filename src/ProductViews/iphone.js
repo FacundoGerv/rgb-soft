@@ -30,9 +30,10 @@ const Iphone = () => {
   return (
     <div className="product-container">
     <div className="category-container">
+      <h1 className="category-title">Iphone</h1>
       {divArray.map((divNumber, index) => (
         <div
-          className={`card-container show-card ${index === divArray.length - 1 ? 'last-card' : ''}`}
+          className={"card-container show-card"}
           key={divNumber}
           id="card-hover"
           onClick={selection}
