@@ -4,7 +4,7 @@ import './../styles/Products.css';
 const Applewatch = () => {
   const [selectedDiv, setSelectedDiv] = useState(null); 
 
-  const divArray = Array.from({ length: 12 }, (_, index) => index + 1);
+  const divArray = Array.from({ length: 11 }, (_, index) => index + 1);
 
   const selection = (event) => {
     const selDiv = event.target;
@@ -17,7 +17,6 @@ const Applewatch = () => {
   };
   const generateContent = () => {
     if (selectedDiv) {
-
       return (
         <div className="overlay" onClick={closeOverlay}>
           <h1>{selectedDiv.textContent}</h1>
@@ -26,7 +25,6 @@ const Applewatch = () => {
     }
     return null;
   };
-
   return (
     <div className="product-container">
     <div className="category-container">

@@ -108,6 +108,7 @@
     height:80%;
     z-index:999;
     position:fixed;
+    background-color: var(--main);
     /* box-shadow: inset 0.5px 0 2px 0.5px #000, inset -0.5px 0 2px -0.5px #000, 0.5px 0 2px 0.5px #FFC0CB, -0.5px 0 2px -0.5px #FFC0CB; */
     border: inset 1px var(--primary);
     box-shadow: 0 0 1px .5px var(--details);
