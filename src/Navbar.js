@@ -1,5 +1,13 @@
 import './styles/Navbar.css';
 import mainLogo from './images/softLogo.png';
+import iphoneLogo from './images/iphone-icon.png';
+import airpodsLogo from './images/airpods.png';
+import iwatchIcon from './images/iwatch-icon.png';
+import accesoriesLogo from './images/iphone-case.png';
+import energyLogo from './images/charger-icon.png';
+import sidebarOpenIcon from './images/sidebar-menu-icon.png';
+import sidebarCloseIcon from './images/sidebar-close-icon.png';
+import contactIcon from './images/contact-icon.png';
 
 function Navbar(props) {
     const handleSetActive = (value) => {
@@ -14,46 +22,46 @@ function Navbar(props) {
             <div className="sideBar show">
                 <div className="sideItemContainer">
                     <div className="sideSelector menuButton" onClick={expandSideBar}>
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={sidebarOpenIcon} alt="Menu Button"/>
                     </div>
                 </div>
                 <div className="sideItemContainer">
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button" onClick={()=> handleSetActive("iphone")}/>
+                    <img src={iphoneLogo} alt="Menu Button" onClick={()=> handleSetActive("iphone")}/>
                     </div>
                 </div>
                 <div className="sideItemContainer" onClick={()=> handleSetActive("airpods")}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button" />
+                    <img src={airpodsLogo} alt="Menu Button" />
                     </div>
                 </div>
                 <div className="sideItemContainer">
                     <div className="sideSelector" onClick={()=> handleSetActive("applewatch")}>
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={iwatchIcon} alt="Menu Button"/>
                     </div>
                 </div>
                 <div className="sideItemContainer" onClick={()=> handleSetActive("accesorios")}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={accesoriesLogo} alt="Menu Button"/>
                     </div>
                 </div>
                 <div className="sideItemContainer" onClick={()=> handleSetActive("cargadores")}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={energyLogo} alt="Menu Button"/>
                     </div>
                 </div>
                 <div className="sideItemContainer">
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={contactIcon} alt="Menu Button"/>
                     </div>
                 </div>
             </div>
             <div className="sideBarExtend">
                 <div className="sideItemContainer menuButton" onClick={expandSideBar}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={sidebarCloseIcon} alt="Menu Button"/>
                     </div>
-                    <span className="sideText" onClick={()=> handleSetActive("home")} >RGBSoft</span>
+                    <span className="sideText" onClick={()=> handleSetActive("home")} >Home</span>
                 </div>
                 <div className="sideItemContainer" onClick={()=> handleSetActive("iphone")}>
                     <div className="sideSelector">

@@ -4,7 +4,7 @@ import './../styles/Products.css';
 const Iphone = () => {
   const [selectedDiv, setSelectedDiv] = useState(null); 
 
-  const divArray = Array.from({ length: 12 }, (_, index) => index + 1);
+  const divArray = Array.from({ length: 10 }, (_, index) => index + 1);
 
   const selection = (event) => {
     const selDiv = event.target;
@@ -17,7 +17,6 @@ const Iphone = () => {
   };
   const generateContent = () => {
     if (selectedDiv) {
-
       return (
         <div className="overlay" onClick={closeOverlay}>
           <h1>{selectedDiv.textContent}</h1>

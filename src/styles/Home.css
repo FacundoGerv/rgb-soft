@@ -7,10 +7,21 @@
     justify-content: center;
 }
 .home-title{
-    color: var(--details);
+    color: var(--main);
     font-variant: small-caps;
-    font-weight: lighter;
-    text-shadow: crimson 2px -2px, green -1.5px 1.5px;
+    font-weight: bold;
+    text-shadow: var(--details) 1px -1px, var(--primary) -.5px .5px;
+    width:20vw;
+    border-bottom: 1px solid var(--primary);
+    animation: title 30s ease-in-out 1000;
+}
+@keyframes title{
+    0%{
+        text-shadow: var(--details) 1px -1px, var(--primary) -.5px .5px;
+    }
+    100%{
+        text-shadow: var(--primary) 1px -1px, var(--details) -.5px .5px;
+    }
 }
 
 /*  Slider Stuff  */
