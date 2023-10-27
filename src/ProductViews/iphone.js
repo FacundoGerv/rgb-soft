@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './../styles/Products.css';
 import whatsappIcon from "./../images/whatsapp.png";
@@ -10,14 +11,15 @@ const Iphone = () => {
     "product": [
       {
         "category": "iphone",
-        "title": "Iphone SE",
+        "title": "silla computadora ",
         "memory_ram": "2gb Ram",
-        "color": "azul turquesa",
+        "color": "blanca",
         "memory": "64gb",
         "price": 67999,
         "camera": "18px",
         "description": "El iPhone dispone de cámara de fotos y un reproductor de música (equivalente al del iPod), además de software para enviar y recibir mensajes de texto y de voz. También ofrece servicios de Internet, como enviar, recibir y leer correo electrónico, cargar páginas web y conectividad por Wi-Fi.",
         "vendido": true,
+        "id" : "1",
         "image": 'prueba1.jpg',
       },
       {
@@ -30,6 +32,7 @@ const Iphone = () => {
         "camera": "18px",
         "description": "descripción 2",
         "vendido": false,
+        "id" : "2",
         "image": 'prueba2.jpg',
       },
       {
@@ -42,6 +45,7 @@ const Iphone = () => {
         "camera": "18px",
         "description": "descripción 3",
         "vendido": false,
+        "id" : "3",
         "image": 'prueba3.jpg',
       },
       {
@@ -63,8 +67,8 @@ const Iphone = () => {
   const selection = (selectedProduct) => {
     setSelectedProduct(selectedProduct);
     hidecard();
+   
   };
-
   const closeOverlay = () => {
     if (selectedProduct != null) {
       setSelectedProduct(null);
@@ -86,7 +90,7 @@ const Iphone = () => {
               <span>Color: {selectedProduct.color}</span>
               <span>Memoria: {selectedProduct.memory}</span>
               <span>Precio: {selectedProduct.price}</span>
-              <span>Cámara: {selectedProduct.camera}</span>
+              <span>Cámara: {selectedProduct.camera}, {selectedProduct.id}</span>
             </div>
           </div>
           <div className='inner-text'>
@@ -94,7 +98,7 @@ const Iphone = () => {
           </div>
           <div className='button-container'>
             <div className="whatsapp-button" onClick={sendWhatsAppMessage}>
-              <img src={whatsappIcon} />
+              <img src={whatsappIcon} alt="whatsapp button logo"/>
               <span>Whatsapp</span>
             </div>
           </div>

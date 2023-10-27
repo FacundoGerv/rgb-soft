@@ -5,8 +5,7 @@ import airpodsLogo from './images/airpods.png';
 import iwatchIcon from './images/iwatch-icon.png';
 import accesoriesLogo from './images/iphone-case.png';
 import energyLogo from './images/charger-icon.png';
-import sidebarOpenIcon from './images/sidebar-menu-icon.png';
-import sidebarCloseIcon from './images/sidebar-close-icon.png';
+import sidebarMenuIcon from './images/sidebar-menu-icon.png';
 import contactIcon from './images/contact-icon.png';
 
 function Navbar(props) {
@@ -22,7 +21,7 @@ function Navbar(props) {
             <div className="sideBar show">
                 <div className="sideItemContainer">
                     <div className="sideSelector menuButton" onClick={expandSideBar}>
-                    <img src={sidebarOpenIcon} alt="Menu Button"/>
+                    <img src={sidebarMenuIcon} alt="Menu Button"/>
                     </div>
                 </div>
                 <div className="sideItemContainer">
@@ -59,7 +58,7 @@ function Navbar(props) {
             <div className="sideBarExtend">
                 <div className="sideItemContainer menuButton" onClick={expandSideBar}>
                     <div className="sideSelector">
-                    <img src={sidebarCloseIcon} alt="Menu Button"/>
+                    <img src={sidebarMenuIcon} alt="Menu Button"/>
                     </div>
                     <span className="sideText" onClick={()=> handleSetActive("home")} >Home</span>
                 </div>
