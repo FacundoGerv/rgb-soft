@@ -295,4 +295,116 @@
     opacity: .75;
     border-bottom: 3px solid var(--primary);
 }
+.button-wrap {
+    width: 3vw;
+    height: 3vw;
+    position: fixed;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--details);
+    top: 0;
+    right: 0;
+    margin: -20px -20px 0 0;
+    transform: rotate(-135deg);
+    border-radius: 10%;
+    z-index: 10;
+}
 
+.button-line{
+    text-wrap:nowrap;
+    font-size: 5px;
+    font-weight: bolder;
+    text-decoration-line: line-through;
+    border-bottom: 2px solid var(--main);
+    padding: 2px 0;
+    color:var(--main);
+}
+.button-line:nth-child(1){
+    width: 23px;
+    padding-bottom: 3px;
+}
+.button-line:nth-child(2){
+    width: 15px;
+}
+.button-line:nth-child(3){
+    width: 7px;
+}
+.button-wrap:hover > .button-line{
+    border-bottom: 2px solid white;
+}
+.button-wrap:hover{
+    background-color: var(--primary);
+}
+.adminDropdown{
+    border:1px solid var(--primary);
+    width: 15vw;
+    height: 11vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: start;
+    z-index: 1;
+    display: none;
+    background-color: var(--detailsDeop);
+    padding: .5vh 1vw;
+}
+.adminDropdown span{
+    font-size: calc(1vw + 3px);
+    color: var(--primary);
+    border-bottom: 1px inset var(--primary);
+    text-align: left;
+    width: max-content;
+    padding-right: .5vw;
+}
+.adminDropdown input{
+    outline: none;
+    border: none;
+    color:white;
+    background-color: rgba(0, 0, 0, .05);
+    box-shadow: inset 0 -5px 3px -5px white;
+    margin-top: 1vh;
+    margin-bottom: .6vh;
+    border: 1px inset rgba(0, 0, 0, .1);
+}
+.adminDropdown input:focus{
+    box-shadow: inset 0 -5px 3px -5px var(--primary);
+}
+.adminInputError {
+    background-color: rgba(255, 0, 0, .1) !important;
+    box-shadow: inset 0 -5px 3px -5px rgba(255, 20, 20, .7) !important;
+}
+.loginBtn{
+    border: 1px outset rgba(0, 0, 0, .1);
+    box-shadow: inset 0 0 2px .1px rgba(0, 0, 0, .1);
+    width: max-content;
+    height: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5vh 1.5vw;
+    align-self: start;
+    background-color: rgba(0, 0, 0, .1);
+    cursor: pointer;
+    user-select: none;
+    font-size: calc(1vw + 1px);
+    margin:0;
+
+}
+.loginBtn:active{
+    border: 1px outset rgba(255, 255, 255, .5);
+    box-shadow: inset 0 0 2px .1px rgba(255, 192, 203, .8);
+    color:  rgba(255, 192, 203, .8);
+}
+
+.adminDisplay{
+    display: flex;
+}
+.adminButtonAtt{
+    background-color: var(--primary);
+}
+.adminButtonLineAtt{
+    border-bottom: 2px solid white;
+}

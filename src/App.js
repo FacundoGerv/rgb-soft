@@ -14,6 +14,7 @@ export default function App(props) {
       
       <section className="App-content">
         <div>
+          
           {props.active === "home" && <Home/>}
           {props.active === "iphone" && <Iphone/>}
           {props.active === "airpods" && <Airpods/>}
