@@ -46,6 +46,8 @@
 .product-container {
     display: flex;
     justify-content: center;
+    /* background-color: red; */
+    min-height: 98vh;
 }
 
 .category-container {
@@ -56,6 +58,7 @@
     margin: 3vh 3vw 2vh 3vw;
     max-width: 90vw;
     gap: 1.5vw;
+
     justify-content: center;
 }
 
