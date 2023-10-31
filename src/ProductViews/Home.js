@@ -22,30 +22,30 @@ const HomeView = () => {
     vertical: false,
     pauseOnHover: true,
   };
-// LOGIN 
+  // LOGIN 
 
-const [password, setPassword] = useState('');
-const handleLogin = (event) => {
-  event.preventDefault(); // Evita que el formulario se envíe normalmente
+  const [password, setPassword] = useState('');
+  const handleLogin = (event) => {
+    event.preventDefault(); // Evita que el formulario se envíe normalmente
 
-  const enteredPassword = event.target.password.value; // Obtiene el valor del campo de contraseña por su atributo 'name'
+    const enteredPassword = event.target.password.value; // Obtiene el valor del campo de contraseña por su atributo 'name'
 
-  if (enteredPassword === "uwu") {
-    // Lógica de inicio de sesión exitosa
-    console.log('Inicio de sesión exitoso');
-    openAdminLogin();
-  } else {
-    // Lógica de inicio de sesión fallido
-    console.log('Inicio de sesión fallido');
-    passError();
-  }
-};
+    if (enteredPassword === "uwu") {
+      // Lógica de inicio de sesión exitosa
+      console.log('Inicio de sesión exitoso');
+      openAdminLogin();
+    } else {
+      // Lógica de inicio de sesión fallido
+      console.log('Inicio de sesión fallido');
+      passError();
+    }
+  };
   function passError() {
     const input = document.getElementsByClassName("adminInput")[0];
     input.classList.add("adminInputError");
-    
+
     // Agregar un retraso de 2 segundos (2000 milisegundos)
-    setTimeout(function() {
+    setTimeout(function () {
       input.classList.remove("adminInputError");
     }, 3000);
   }
@@ -61,13 +61,13 @@ const handleLogin = (event) => {
       <form className="adminDropdown" onSubmit={handleLogin}>
         <span>Admin Login</span>
         <input
-        className="adminInput"
-        type="password"
-        name="password"
-        value={password}
-        required
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Ingrese token de administrador"
+          className="adminInput"
+          type="password"
+          name="password"
+          value={password}
+          required
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Ingrese token de administrador"
         />
         <button className="loginBtn" type="submit" >
           Login
@@ -75,7 +75,7 @@ const handleLogin = (event) => {
       </form>
       <h1 className="home-title">RGBSoft</h1>
       <Slider {...SliderSettings}>
-      <div>
+        <div>
           <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
             <div className="slider-container">
               <img src={PHimage} alt="test1" />
@@ -109,17 +109,17 @@ const handleLogin = (event) => {
                 </div>
                 <div className="text-desc">
                   <p>
-                  "Camara: 15mpx
-                  procesador: a12 2.5gHz
-                  Desc Item 2
-                  Desc Item 3
-                  Desc Item 4
-                  Desc Item 5
-                  Desc Item 6
-                  Desc Item 7: PlaceHolder 7
-                  Desc Item 8 (PlaceHolder on Parentheses)
-                  Desc Item 9 [PlaceHolder on Brackets]
-                  Desc Item 10 "REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT  REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT""</p>
+                    "Camara: 15mpx
+                    procesador: a12 2.5gHz
+                    Desc Item 2
+                    Desc Item 3
+                    Desc Item 4
+                    Desc Item 5
+                    Desc Item 6
+                    Desc Item 7: PlaceHolder 7
+                    Desc Item 8 (PlaceHolder on Parentheses)
+                    Desc Item 9 [PlaceHolder on Brackets]
+                    Desc Item 10 "REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT  REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT""</p>
                 </div>
               </div>
             </div>
@@ -177,17 +177,17 @@ const handleLogin = (event) => {
     </div>
   );
 };
-function openAdminLogin(){
+function openAdminLogin() {
   var adminClasses = document.getElementsByClassName("adminDropdown")[0];
   var buttonClasses = document.getElementsByClassName("button-wrap")[0];
   var buttonLineClass = document.getElementsByClassName("button-line");
-  if(adminClasses.classList.contains("adminDisplay")){
+  if (adminClasses.classList.contains("adminDisplay")) {
     adminClasses.classList.remove("adminDisplay");
     buttonClasses.classList.remove("adminButtonAtt");
     for (var i = 0; i < buttonLineClass.length; i++) {
       buttonLineClass[i].classList.remove("adminButtonLineAtt");
     }
-  }else{
+  } else {
     adminClasses.classList.add("adminDisplay");
     buttonClasses.classList.add("adminButtonAtt");
     for (var i = 0; i < buttonLineClass.length; i++) {

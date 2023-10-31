@@ -2,7 +2,7 @@
   --main: rgb(34,34,34);
   --primary: #FFC0CB;
   --details: #a1a1a1;
-  --detailsDeop: rgba(161,161,161, 0.2)
+  --detailsDeop: rgba(161,161,161, 0.2);
 }
 
 body {

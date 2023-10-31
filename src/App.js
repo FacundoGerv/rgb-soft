@@ -21,6 +21,9 @@ export default function App(props) {
           {props.active === "applewatch" && <Applewatch/>}
           {props.active === "accesorios" && <Accesorios/>}
           {props.active === "cargadores" && <Cargadores/>}
+          <a className='rgbSoft' href="https://www.instagram.com/rgbsoft/">
+            Designed by RGBSoft
+          </a>
          
         </div>
       </section>

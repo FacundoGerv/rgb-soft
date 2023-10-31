@@ -12,6 +12,7 @@ function Navbar(props) {
     const handleSetActive = (value) => {
       if (typeof props.setActive === 'function') {
         props.setActive(value);
+        
       } else {
         console.error("props.setActive is not a function");
       }
@@ -25,7 +26,7 @@ function Navbar(props) {
                     </div>
                 </div>
                 <div className="sideItemContainer">
-                    <div className="sideSelector">
+                    <div className={`sideSelector ${props.active === 'iphone' ? 'active' : ''}`}>
                     <img src={iphoneLogo} alt="Menu Button" onClick={()=> handleSetActive("iphone")}/>
                     </div>
                 </div>
@@ -56,45 +57,45 @@ function Navbar(props) {
                 </div>
             </div>
             <div className="sideBarExtend">
-                <div className="sideItemContainer menuButton" onClick={expandSideBar}>
-                    <div className="sideSelector">
-                    <img src={sidebarMenuIcon} alt="Menu Button"/>
+                <div className="sideItemContainer menuButton">
+                    <div className="sideSelector" onClick={expandSideBar}>
+                    <img src={sidebarMenuIcon} alt="Menu Button" />
                     </div>
                     <span className="sideText" onClick={()=> handleSetActive("home")} >Home</span>
                 </div>
                 <div className="sideItemContainer" onClick={()=> handleSetActive("iphone")}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={iphoneLogo} alt="Menu Button"/>
                     </div>
                     <span className="sideText">iPhone</span>
                 </div>
                 <div className="sideItemContainer" onClick={()=> handleSetActive("airpods")}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={airpodsLogo} alt="Menu Button"/>
                     </div>
                     <span className="sideText">AirPods</span>
                 </div>
                 <div className="sideItemContainer" onClick={()=> handleSetActive("applewatch")}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Apple Watch"/>
+                    <img src={iwatchIcon} alt="Apple Watch"/>
                     </div>
                     <span className="sideText">Apple Watch</span>
                 </div>
                 <div className="sideItemContainer" onClick={()=> handleSetActive("accesorios")}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={accesoriesLogo} alt="Menu Button"/>
                     </div>
                     <span className="sideText">Accesorios</span>
                 </div>
-                <div className="sideItemContainer" onClick={()=> handleSetActive("cargadores")}>
+                <div className="sideItemContainer" onClick={() => handleSetActive("cargadores")}>
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={energyLogo} alt="Menu Button"/>
                     </div>
                     <span className="sideText">Cargadores</span>
                 </div>
                 <div className="sideItemContainer">
                     <div className="sideSelector">
-                    <img src={mainLogo} alt="Menu Button"/>
+                    <img src={contactIcon} alt="Menu Button"/>
                     </div>
                     <span className="sideText">Contacto</span>
                 </div>

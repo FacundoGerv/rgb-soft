@@ -66,7 +66,7 @@
 /*###################*/
 
 .sideBarExtend{
-    background-color: var(--detailsDeop);
+    background-color: rgba(100, 100, 100, 0.5);
     border-right: solid 0.1px var(--primary);
     position: relative;
     height: 100vh;
@@ -111,7 +111,11 @@
     height: calc(2vw + 10px);
     background-color: var(--detailsDeop);
     border-radius: 100%;
-    border: inset 0.1px var(--primary);;
+}
+.sideBarExtend .sideSelector:hover{
+    border: inset 1px var(--primary);
+    width: calc(2vw + 9px);
+    height: calc(2vw + 9px);
 }
 .sideBarExtend .sideItemContainer img{
     width: 2vw;
@@ -121,7 +125,7 @@
     padding: 0.5vw;
     font-variant: small-caps;
     white-space: nowrap;
-    color: var(--details)
+    color: rgb(189, 189, 189);
 }
 .show{
     display:flex;
@@ -169,4 +173,7 @@
     100%{
         opacity: 0;
     }  
+}
+.active{
+    border: inset 0.1px var(--primary);
 }
