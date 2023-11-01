@@ -60,6 +60,28 @@
     position: fixed;
     bottom: 2vh;
 }
+.sideBar .navSeparator{
+    margin: 2.3vh 0 0 0;
+    border-bottom: 1px solid var(--primary);
+    height: 0;
+    width: 90%;
+}
+.sideBar .navSeparator:nth-child(2){
+    margin: -1.4vh 0 0 0;
+}
+#test{
+    background-color: blue;
+    border: 1px solid red;
+}
+.addprod-icon{
+    transform: rotate(45deg) scale(70%);
+}
+.logout-icon{
+    transform: scale(70%);
+}
+.energy-icon{
+    transform: scale(80%);
+}
 
 /*###################*/
 /*Side Bar Dropdown??*/
@@ -126,6 +148,14 @@
     font-variant: small-caps;
     white-space: nowrap;
     color: rgb(189, 189, 189);
+}
+.sideBarExtend .navSeparator{
+    border-bottom: 1px solid var(--primary);
+    width: 90%;
+    margin: 2.3vh 0 0 0;
+}
+.sideBarExtend .navSeparator:nth-child(2){
+    margin: -1.4vh 0 0 0;
 }
 .show{
     display:flex;

@@ -6,6 +6,7 @@ import Airpods from './ProductViews/airpods';
 import Applewatch from './ProductViews/applewatch';
 import Accesorios from './ProductViews/accesorios';
 import Cargadores from './ProductViews/cargadores';
+import Addproduct from './ProductViews/addproduct'
 
 export default function App(props) {
 
@@ -21,6 +22,7 @@ export default function App(props) {
           {props.active === "applewatch" && <Applewatch/>}
           {props.active === "accesorios" && <Accesorios/>}
           {props.active === "cargadores" && <Cargadores/>}
+          {props.active === "addproduct" && <Addproduct/>}
           <a className='rgbSoft' href="https://www.instagram.com/rgbsoft/">
             Designed by RGBSoft
           </a>
