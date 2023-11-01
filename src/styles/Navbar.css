@@ -108,6 +108,8 @@
     height: calc(2vw + 10px);
     margin-top: 1vw;
     padding: 0.1vh;
+    cursor: pointer;
+    user-select: none;
 }
 .sideBarExtend .sideItemContainer:first-child{
     margin-bottom: 3vh;
