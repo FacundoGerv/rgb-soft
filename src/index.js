@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './App';
 import Navbar from './Navbar';
+import { GlobalProvider } from './GlobalContext';
 import reportWebVitals from './reportWebVitals';
 
 const MainApp = () => {
@@ -19,7 +20,9 @@ const MainApp = () => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MainApp />
+    <GlobalProvider>
+      <MainApp/>
+    </GlobalProvider>
   </React.StrictMode>
 );
 

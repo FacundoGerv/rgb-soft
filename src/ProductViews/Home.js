@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./../styles/Home.css"
 import Slider from "react-slick"
 import PHimage from "./../images/prueba1.jpg"
 import testicon from "./../images/sidebar-menu-icon.png"
 import "slick-carousel/slick/slick.css";
+import { useGlobalContext } from "./../GlobalContext";
 import tt from "./../Navbar"
-// import "slick-carousel/slick/slick-theme.css";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const HomeView = () => {
   const SliderSettings = {
@@ -25,17 +27,16 @@ const HomeView = () => {
   // LOGIN 
 
   const [password, setPassword] = useState('');
-  const handleLogin = (event) => {
+  const { handleLogin, temporaryToken } = useGlobalContext();
+  const handleLoginLoc = (event) => {
     event.preventDefault(); // Evita que el formulario se envíe normalmente
-
     const enteredPassword = event.target.password.value; // Obtiene el valor del campo de contraseña por su atributo 'name'
-
     if (enteredPassword === "uwu") {
-      // Lógica de inicio de sesión exitosa
       console.log('Inicio de sesión exitoso');
+      const newToken = uuidv4();
+      handleLogin(newToken);
       openAdminLogin();
     } else {
-      // Lógica de inicio de sesión fallido
       console.log('Inicio de sesión fallido');
       passError();
     }
@@ -53,26 +54,31 @@ const HomeView = () => {
 
   return (
     <div className="home-container">
-      <div className="button-wrap" onClick={openAdminLogin}>
-        <span className="button-line"> </span>
-        <span className="button-line"> </span>
-        <span className="button-line"> </span>
-      </div>
-      <form className="adminDropdown" onSubmit={handleLogin}>
-        <span>Admin Login</span>
-        <input
-          className="adminInput"
-          type="password"
-          name="password"
-          value={password}
-          required
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Ingrese token de administrador"
-        />
-        <button className="loginBtn" type="submit" >
-          Login
-        </button>
-      </form>
+      {!temporaryToken && (
+        <div>
+          <div className="button-wrap" onClick={openAdminLogin}>
+            <span className="button-line"> </span>
+            <span className="button-line"> </span>
+            <span className="button-line"> </span>
+          </div>
+          <form className="adminDropdown" onSubmit={handleLoginLoc}>
+            <span>Admin Login</span>
+            <input
+              className="adminInput"
+              type="password"
+              name="password"
+              value={password}
+              required
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Ingrese token de administrador"
+            />
+            <button className="loginBtn" type="submit" >
+              Login
+            </button>
+          </form>
+        </div>
+      )}
+
       <h1 className="home-title">RGBSoft</h1>
       <Slider {...SliderSettings}>
         <div>
@@ -93,7 +99,6 @@ const HomeView = () => {
                   <span>Desc Item 7: PlaceHolder 7</span>
                   <span>Desc Item 8 (PlaceHolder on Parentheses)</span>
                   <span>Desc Item 9 [PlaceHolder on Brackets]</span>
-                  <span>Desc Item 10 "REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT  REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT"</span>
                 </div>
               </div>
             </div>
@@ -108,18 +113,15 @@ const HomeView = () => {
                   <h1>PlaceHolder 2</h1>
                 </div>
                 <div className="text-desc">
-                  <p>
-                    "Camara: 15mpx
-                    procesador: a12 2.5gHz
-                    Desc Item 2
-                    Desc Item 3
-                    Desc Item 4
-                    Desc Item 5
-                    Desc Item 6
-                    Desc Item 7: PlaceHolder 7
-                    Desc Item 8 (PlaceHolder on Parentheses)
-                    Desc Item 9 [PlaceHolder on Brackets]
-                    Desc Item 10 "REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT  REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT""</p>
+                  <span>Desc Item 1</span>
+                  <span>Desc Item 2</span>
+                  <span>Desc Item 3</span>
+                  <span>Desc Item 4</span>
+                  <span>Desc Item 5</span>
+                  <span>Desc Item 6</span>
+                  <span>Desc Item 7: PlaceHolder 7</span>
+                  <span>Desc Item 8 (PlaceHolder on Parentheses)</span>
+                  <span>Desc Item 9 [PlaceHolder on Brackets]</span>
                 </div>
               </div>
             </div>
@@ -143,7 +145,6 @@ const HomeView = () => {
                   <span>Desc Item 7: PlaceHolder 7</span>
                   <span>Desc Item 8 (PlaceHolder on Parentheses)</span>
                   <span>Desc Item 9 [PlaceHolder on Brackets]</span>
-                  <span>Desc Item 10 "REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT  REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT"</span>
                 </div>
               </div>
             </div>
@@ -167,7 +168,6 @@ const HomeView = () => {
                   <span>Desc Item 7: PlaceHolder 7</span>
                   <span>Desc Item 8 (PlaceHolder on Parentheses)</span>
                   <span>Desc Item 9 [PlaceHolder on Brackets]</span>
-                  <span>Desc Item 10 "REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT  REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT REALLY LONG TEXT"</span>
                 </div>
               </div>
             </div>

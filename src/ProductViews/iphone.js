@@ -85,7 +85,7 @@ const Iphone = () => {
         "price": 67999,
         "camera": "18px",
         "description": "descripción 2",
-        "vendido": false,
+        "isSold": false,
       }
     ]
   });
