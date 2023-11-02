@@ -10,94 +10,25 @@ import Tickicon from "./../images/tick.png";
 import { click } from '@testing-library/user-event/dist/click';
 import { useGlobalContext } from './../GlobalContext';
 
-const Iphone = () => {
+export default function Iphone(){
   const [selectedProduct, setSelectedProduct] = useState(null);
   const overlayRef = useRef(null);
-
   const { temporaryToken } = useGlobalContext();
-  const [product, setProduct] = useState({
-    "product": [
-      {
-        "category": "iphone",
-        "title": "Iphone SE",
-        "memory_ram": "2gb Ram",
-        "color": "negro",
-        "memory": "64gb",
-        "price": "67999",
-        "camera": "18px",
-        "batery": "90%",
-        "screen": "6' amoled",
-        "cpu": "a13 2,5ghz",
-        "description": "El iPhone dispone de cámara de fotos y un reproductor de música (equivalente al del iPod), además de software para enviar y recibir mensajes de texto y de voz. También ofrece servicios de Internet, como enviar, recibir y leer correo electrónico, cargar páginas web y conectividad por Wi-Fi.",
-        "vendido": true,
-        "id": "1",
-        "image": 'prueba1.jpg',
-      },
-      {
-        "category": "iphone",
-        "title": "Iphone 12 PRO MAX",
-        "memory_ram": "2gb Ram",
-        "color": "azul turquesa",
-        "memory": "64gb",
-        "price": 67999,
-        "camera": "18px",
-        "description": "descripción 2",
-        "vendido": false,
-        "id": "2",
-        "image": 'prueba2.jpg',
-      },
-      {
-        "category": "iphone",
-        "title": "Iphone 11",
-        "memory_ram": "2gb Ram",
-        "color": "azul turquesa",
-        "memory": "64gb",
-        "price": 67999,
-        "camera": "18px",
-        "description": "descripción 3",
-        "vendido": false,
-        "id": "3",
-        "image": 'prueba3.jpg',
-      },
-      {
-        "category": "iphone",
-        "title": "Iphone 11",
-        "memory_ram": "2gb Ram",
-        "color": "azul turquesa",
-        "memory": "64gb",
-        "price": 67999,
-        "camera": "18px",
-        "description": "descripción 3",
-        "vendido": false,
-        "id": "3",
-        "image": 'prueba3.jpg',
-      },
-      {
-        "category": "iphone",
-        "title": "Iphone 11",
-        "memory_ram": "2gb Ram",
-        "color": "azul turquesa",
-        "memory": "64gb",
-        "price": 67999,
-        "camera": "18px",
-        "description": "descripción 3",
-        "vendido": false,
-        "id": "3",
-        "image": 'prueba3.jpg',
-      },
-      {
-        "category": "airpods",
-        "title": "Iphone 2",
-        "memory_ram": "2gb Ram",
-        "color": "azul turquesa",
-        "memory": "64gb",
-        "price": 67999,
-        "camera": "18px",
-        "description": "descripción 2",
-        "isSold": false,
-      }
-    ]
-  });
+  const { groupedProducts } = useGlobalContext();
+  console.log('groupedProducts:', groupedProducts);
+  const iphoneProducts = (groupedProducts['iphone'] || []).filter((product) => !product.isSold);
+
+  const selection = (selectedProduct) => {
+    setSelectedProduct(selectedProduct);
+    hidecard();
+
+  };
+  const closeOverlay = (event) => {
+    if (selectedProduct && overlayRef.current && !overlayRef.current.contains(event.target)) {
+      setSelectedProduct(null);
+      showcard();
+    }
+  };
 
   const SliderSettings = {
     dots: true,
@@ -112,27 +43,14 @@ const Iphone = () => {
     pauseOnHover: true,
   };
 
-  const iphoneProducts = product.product.filter(item => item.category === "iphone");
-
-  const selection = (selectedProduct) => {
-    setSelectedProduct(selectedProduct);
-    hidecard();
-
-  };
-  const closeOverlay = (event) => {
-    if (selectedProduct && overlayRef.current && !overlayRef.current.contains(event.target)) {
-      setSelectedProduct(null);
-      showcard();
-    }
-  };
-
   return (
+    
     <div
       className="product-container"
       onClick={closeOverlay}>
       <div className="category-container">
         <h1 className="category-title">Iphone</h1>
-        {iphoneProducts.map((product, index) => (
+        {iphoneProducts && iphoneProducts.map((product, index) => (
           <div
             className={"card-container show-card"}
             key={index}
@@ -231,4 +149,4 @@ const sendWhatsAppMessage = (selectedProduct) => {
   window.open(whatsappLink, '_blank');
 };
 
-export default Iphone;
+
