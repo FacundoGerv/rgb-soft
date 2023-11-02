@@ -10,7 +10,7 @@ import Tickicon from "./../images/tick.png";
 import { click } from '@testing-library/user-event/dist/click';
 import { useGlobalContext } from './../GlobalContext';
 
-export default function Applewatch(){
+export default function Applewatch() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const overlayRef = useRef(null);
   const { temporaryToken } = useGlobalContext();
@@ -44,7 +44,7 @@ export default function Applewatch(){
   };
 
   return (
-    
+
     <div
       className="product-container"
       onClick={closeOverlay}>

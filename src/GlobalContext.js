@@ -12,9 +12,9 @@ export const GlobalProvider = ({ children }) => {
   const [groupedProducts, setGroupedProducts] = useState({}); // Objeto para agrupar los productos por categoría
 
   useEffect(() => {
-    
+
     const grouped = jsonData.product.reduce((result, product) => {
-    const category = product.category;
+      const category = product.category;
       if (!result[category]) {
         result[category] = [];
       }
