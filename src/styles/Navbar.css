@@ -59,6 +59,7 @@
 .sideBar .sideItemContainer:last-child{
     position: fixed;
     bottom: 2vh;
+    visibility: hidden;
 }
 .sideBar .navSeparator{
     margin: 2.3vh 0 0 0;
@@ -122,6 +123,7 @@
 }
 .sideBarExtend .sideItemContainer:last-child{
     position: fixed;
+    visibility: hidden;
     bottom: 2vh;
 }
 .sideBarExtend .sideSelector{

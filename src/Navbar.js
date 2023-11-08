@@ -72,6 +72,16 @@ function Navbar(props) {
                 )}
                 {temporaryToken && (                    
                     <div className="sideItemContainer" onClick={() => {
+                        handleSetActive("stock");
+                        
+                    }}>
+                        <div className="sideSelector">
+                            <img src={addProductIcon} alt="Menu Button" className="addprod-icon" />
+                        </div>
+                    </div>
+                )}
+                {temporaryToken && (                    
+                    <div className="sideItemContainer" onClick={() => {
                         handleSetActive("home");
                         handleLogout();
                     }}> 
@@ -138,6 +148,17 @@ function Navbar(props) {
                             <img src={addProductIcon} alt="Menu Button" className="addprod-icon" />
                         </div>
                         <span className="sideText">Agregar Producto</span>
+                    </div>
+                )}
+                 {temporaryToken && (                    
+                    <div className="sideItemContainer" onClick={() => {
+                        handleSetActive("addproduct");
+                        
+                    }}>
+                        <div className="sideSelector">
+                            <img src={addProductIcon} alt="Menu Button" className="addprod-icon" />
+                        </div>
+                        <span className="sideText">Control Stock</span>
                     </div>
                 )}
                 {temporaryToken && (                    
