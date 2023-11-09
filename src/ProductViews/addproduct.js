@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import './../styles/addprod.css';
+import iphoneIcon from './../images/iphone-icon.png';
+import airpodsIcon from './../images/airpods.png';
+import iwatchIcon from './../images/iwatch-icon.png';
+import accesoriesIcon from './../images/iphone-case.png';
+import energyIcon from './../images/charger-icon.png';
 
 export default function AddProduct() {
   const [formData, setFormData] = useState({
@@ -9,10 +14,10 @@ export default function AddProduct() {
     color: "",
     camera: "",
     screen: "",
-    battery: "",
+    batery: "",
     cpu: "",
     image: "",
-    description: "",
+    desciption: "",
     price: 0,
   });
 
@@ -22,6 +27,10 @@ export default function AddProduct() {
       ...formData,
       [name]: value,
     });
+  };
+
+  const handleCategoryClick = (category) => {
+    setFormData({ ...formData, category });
   };
 
   const handleSubmit = (e) => {
@@ -47,6 +56,19 @@ export default function AddProduct() {
         // Puedes manejar la respuesta aquí
       })
       .catch(error => console.log('error', error));
+    setFormData({
+      title: "",
+      category: "",
+      memory_ram: "",
+      color: "",
+      camera: "",
+      screen: "",
+      batery: "",
+      cpu: "",
+      image: "",
+      desciption: "",
+      price: 0,
+    });
   };
 
   return (
@@ -54,19 +76,51 @@ export default function AddProduct() {
       <div className='size'>
         <div className='inner-content'>
           <h1>Añadir Producto</h1>
-          <form onSubmit={handleSubmit}>
+          <div className='button-container'>
+            <button
+              type="button"
+              onClick={() => handleCategoryClick('iphone')}
+              className={formData.category === 'iphone' ? 'active' : ''}
+            >
+              <img src={iphoneIcon} att="Button Image" id='iphoneicon' />
+            </button>
+            <button
+              type="button"
+              onClick={() => handleCategoryClick('airpods')}
+              className={formData.category === 'airpods' ? 'active' : ''}
+            >
+              <img src={airpodsIcon} att="Button Image" id='airpodsicon' />
+            </button>
+            <button
+              type="button"
+              onClick={() => handleCategoryClick('applewatch')}
+              className={formData.category === 'applewatch' ? 'active' : ''}
+            >
+              <img src={iwatchIcon} att="Button Image" id='iwatchicon' />
+            </button>
+            <button
+              type="button"
+              onClick={() => handleCategoryClick('accesorios')}
+              className={formData.category === 'accesorios' ? 'active' : ''}
+            >
+              <img src={accesoriesIcon} att="Button Image" id='accesoriesicon' />
+            </button>
+            <button
+              type="button"
+              onClick={() => handleCategoryClick('cargadores')}
+              className={formData.category === 'cargadores' ? 'active' : ''}
+            >
+              <img src={energyIcon} att="Button Image" id='batteryicon' />
+            </button>
+          </div>
+          <form
+            onSubmit={handleSubmit}
+            className='add-form'>
             <input
               type="text"
               name="title"
               placeholder="Título"
               value={formData.title}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="category"
-              placeholder="Categoría"
-              value={formData.category}
               onChange={handleChange}
             />
             <input
@@ -121,21 +175,26 @@ export default function AddProduct() {
             <input
               type="text"
               name="description"
-              placeholder="Descripción"
+              placeholder="Descripcion"
               value={formData.description}
               onChange={handleChange}
+              id="descInput"
             />
-            <input
-              type="number"
-              name="price"
-              placeholder="Precio"
-              value={formData.price}
-              onChange={handleChange}
-            />
-            <button type="submit">Agregar Producto</button>
+            <div className='price-input-container'>
+              <span>$</span>
+              <input
+                type="text"
+                name="price"
+                placeholder="Precio"
+                value={formData.price}
+                onChange={handleChange}
+              />
+            </div>
+            <button
+              type="submit">Agregar Producto</button>
           </form>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

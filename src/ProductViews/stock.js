@@ -10,13 +10,13 @@ import Tickicon from "./../images/tick.png";
 import { click } from '@testing-library/user-event/dist/click';
 import { useGlobalContext } from './../GlobalContext';
 
-export default function Iphone() {
+export default function StockControl() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const overlayRef = useRef(null);
   const { temporaryToken } = useGlobalContext();
   const { groupedProducts } = useGlobalContext();
   console.log('groupedProducts:', groupedProducts);
-  const iphoneProducts = (groupedProducts['iphone'] || []).filter((product) => !product.isSold);
+  const stockControlProducts = (groupedProducts['iphone'] || []).filter((product) => !product.isSold);
 
   const selection = (selectedProduct) => {
     setSelectedProduct(selectedProduct);
@@ -49,8 +49,8 @@ export default function Iphone() {
       className="product-container"
       onClick={closeOverlay}>
       <div className="category-container">
-        <h1 className="category-title">Iphone</h1>
-        {iphoneProducts && iphoneProducts.map((product, index) => (
+        <h1 className="category-title">Stock Control</h1>
+        {stockControlProducts && stockControlProducts.map((product, index) => (
           <div
             className={"card-container show-card"}
             key={index}
