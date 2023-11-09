@@ -1,0 +1,152 @@
+.container {
+    /* border: 1px red solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.size {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 90vh;
+    background-color: rgba(120, 120, 120, 0.2);
+}
+
+.inner-content {
+    background-color: rgba(20, 20, 20, 0.5);
+    width: 90%;
+    height: 90%;
+    /* border: 1px solid blue; */
+}
+
+.inner-content h1 {
+    font-weight: lighter;
+    user-select: none;
+    cursor: default;
+    font-variant: small-caps;
+    border-bottom: solid 1px var(--primary);
+    color: var(--details);
+    margin: 0 20vw;
+    padding-bottom: 1%;
+    text-wrap: nowrap;
+    text-align: center;
+}
+
+.button-container {
+    margin-top: 3%;
+    display: flex;
+    gap: 3%;
+}
+
+.button-container button {
+    /* Estilos comunes para los botones */
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    height: 3vw;
+    width: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--details);
+
+    &.active {
+        background-color: var(--primary);
+    }
+    &:hover{
+        box-shadow: inset 0 0 2px 1px var(--primary);
+    }
+}
+
+.button-container button img {
+    height: 2.5vw;
+    width: 2.5vw;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    margin-top: 4vh;
+}
+
+.form-item span{
+   font-size: 1vw;
+   margin-right: .5vw;
+}
+
+form input[type=text] {
+    background-color: transparent;
+    color: whitesmoke;
+    width: 50%;
+    border: none;
+    border-bottom: 1px inset var(--details);
+    &:focus{
+        outline: none;
+        border-bottom: 1px inset white;
+    }
+}
+.price-input-container{
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: center;
+    margin-top: 1vh;
+}
+.price-input-container input{
+    /* border: 1px solid red; */
+    height: 3vh;
+    color: var(--details);
+    text-align: center;
+    width: 5vw;
+    background-color: transparent;
+    border: 2px solid var(--details);
+    border-radius: 5%;
+    &:focus{
+        outline: none;
+    }
+}
+.price-input-container span{
+    color: var(--details);
+    font-size: 80%;
+}
+
+.add-form button[type=submit]{
+    margin-top: 3vh;
+    font-size: 1vw;
+    font-weight: 450;
+    background-color: var(--detailsDeop);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    width: 10vw;
+    height: 3vw;
+
+    &:hover{
+        background-color: rgb(238, 239, 238);
+    }
+    &:focus{
+        background-color: var(--primary);
+    }
+}
+/*Icon settings*/
+
+#batteryicon {
+    transform: scale(82%);
+}
+
+#iphoneicon {
+    transform: scale(87%);
+}
