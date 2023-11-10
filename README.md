@@ -4,6 +4,13 @@
 <h1 align=center>
 Soft - DPSM (Digital Product Sales Model) </h1>
 
+## Introducción
+
+&emsp;¡Embárquense en un emocionante viaje detrás de escena con RGBSoft y su revolucionario proyecto, DPSM: Digital Product Sales Model! Desde un diseño adaptable y personalización hasta un catálogo de productos fácilmente gestionable.  
+&emsp;DPSM no es solo un proyecto técnico, sino una respuesta a las necesidades del mercado actual. Con un equipo dedicado y un enfoque en la experiencia del usuario, este proyecto busca superar los desafíos de adaptabilidad, personalización y eficiencia en la gestión de catálogos y pedidos. Desde el diseño minimalista hasta la seguridad de datos, DPSM promete transformar la presencia en línea de pequeñas y medianas empresas, emprendedores y agencias creativas.  
+&emsp;Imaginen un universo donde la adaptabilidad, la personalización y la eficiencia se unen para crear una experiencia única. Con Facundo Gervasi y Luciano Bugarin, encargados del desarrollo Front End, junto con Ivo Rossi, el genio detrás del Back End, este equipo está dando vida a un sueño compartido.
+
+
 ## Información General
 
 - **Nombre del Proyecto:** DPSM – Digital Product Sales Model
