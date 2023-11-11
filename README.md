@@ -23,6 +23,7 @@ Soft - DPSM (Digital Product Sales Model) </h1>
   <summary>Video Descriptivo</summary>
   <a href="https://drive.google.com/file/d/1_tJ0aAK0neQsersuQlj73T1lVJGfbUW5/view">Click aqui!</a>
 </details>
+
 ## Objetivos y Alcance
 
 ### Objetivos del Proyecto
